@@ -159,4 +159,4 @@ But if each operation has different duration, then the operation having the smal
 
 ### Event loop
 
-Basic function of the event loop is to checzk if the call stack is empty or not, if is empty, then it checks the callback queue for all the asynchronous operations whose duration is complete, and then places those operations in the call stack and executes them one by one (sequentially).
+Basic function of the event loop is to check if the call stack is empty or not, if is empty, then it checks the callback queue for all the asynchronous operations whose duration is complete, and then places those operations in the call stack and executes them one by one (sequentially).
