@@ -114,6 +114,8 @@ above sorting function will give output as `['a','A','b','B','t']`
 
 ## Automatic Type Conversions
 
+Automatic type conversions are performed by the Javascript interpreter to change data types of values based on the operators used in the Javascript expression.
+
 ```
 let x = 5 + 7;       // x.valueOf() is 12,  typeof x is a number
 let x = 5 + "7";     // x.valueOf() is 57,  typeof x is a string
@@ -139,3 +141,22 @@ The === operator forces comparison of values and type:
 1 === "1";      // false
 1 === true;     // false
 ```
+
+## What is call stack,callback queue and event loop ?
+
+### Call stack
+
+In a call stack, functions are added to the stack when called and removed when their execution is completed.
+
+**_Note :- if a function is called and placed in the call stack, which in turn calls another function in its own execution, then that new function is placed on the call stack and so on(in case of infinite recursion it will lead to stack overflow as the call stack is finite)._**
+
+### Callback queue
+
+Callback queue basically contains all the asynchronous operations in a queue. While the statements are executed in the call stack if any asynchronous operation is encountered (setTimeOut or api call), it is added to the callback queue without blocking other statements. When the call stack becomes empty, that asynchronous operations gets executed in the stack.
+
+In the callback queue, all asynchronous operations are lined up in the queue in a specific order, if the duration of all the operations are the same, then they will be executed sequentially i.e. the order in which they have been added to the queue.
+But if each operation has different duration, then the operation having the smaller duration will get executed first, even if it is placed at the last(regardless of its position)
+
+### Event loop
+
+Basic function of the event loop is to checzk if the call stack is empty or not, if is empty, then it checks the callback queue for all the asynchronous operations whose duration is complete, and then places those operations in the call stack and executes them one by one (sequentially).

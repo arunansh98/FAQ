@@ -191,3 +191,59 @@ document.getElementById("demo").innerHTML = answer;
 </body>
 </html>
 ```
+
+# What are SPA and MPA ?
+
+## Single Page Applications (SPAs):
+
+### Loading:
+
+SPA: Loads a single HTML page initially.
+MPA: Loads separate HTML pages for each distinct section.
+
+### Navigation:
+
+SPA: Navigates between sections without full page reloads, providing a seamless user experience.
+MPA: Requires full page reloads when navigating between different sections.
+
+### Interactivity:
+
+SPA: Uses dynamic updates to modify content on the same page based on user interactions.
+MPA: Relies on full page reloads to display new content.
+
+### Technology:
+
+SPA: Often built using frontend frameworks/libraries like React, Angular, or Vue.js.
+MPA: Typically uses a more traditional approach without heavy reliance on frontend frameworks.
+
+### Resource Loading:
+
+SPA: Loads resources (like data) on demand, improving initial load times.
+MPA: Loads resources with each new page, potentially leading to longer initial load times.
+
+## Multi-Page Applications (MPAs):
+
+### SEO (Search Engine Optimization):
+
+SPA: SEO can be a challenge due to the reliance on JavaScript for content rendering.
+MPA: Generally better for SEO, as each page has its own URL and can be indexed separately.
+
+### Complexity:
+
+SPA: Can have a more modular and structured codebase, enhancing development and maintenance.
+MPA: May have a simpler code structure for each page, but can become complex as the application grows.
+
+### Page Structure:
+
+SPA: Typically has a single HTML file with dynamic updates.
+MPA: Consists of multiple HTML files, each representing a distinct page.
+
+### User Experience:
+
+SPA: Offers a more dynamic and responsive user experience.
+MPA: May feel slower due to full page reloads but can have faster initial load times.
+
+### Development Approach:
+
+SPA: Supports a more modular and component-based development approach.
+MPA: Might involve a more traditional, page-centric development approach.
