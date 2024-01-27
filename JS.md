@@ -160,3 +160,55 @@ But if each operation has different duration, then the operation having the smal
 ### Event loop
 
 Basic function of the event loop is to checzk if the call stack is empty or not, if is empty, then it checks the callback queue for all the asynchronous operations whose duration is complete, and then places those operations in the call stack and executes them one by one (sequentially).
+
+### What is hoisting in Javascript ?
+
+Hoisting is a JavaScript behavior where variable and function declarations are moved to the top of their containing scope during the compilation phase. This means that you can use a variable or function before it is declared in your code. However, it's important to note that only the declarations are hoisted, not the initializations or assignments.
+
+Let's look at examples to understand hoisting with variables and functions:
+
+#### 1. Variable Hoisting:
+
+```
+console.log(x);  // Outputs: undefined
+var x = 5;
+console.log(x);  // Outputs: 5
+```
+
+In the above example, the variable x is hoisted to the top of its scope during compilation, so the first console.log outputs undefined. The declaration var x is hoisted, but the assignment (x = 5) is not.
+
+#### 2. Function Hoisting:
+
+```
+sayHello();  // Outputs: "Hello, World!"
+function sayHello() {
+  console.log("Hello, World!");
+}
+```
+
+In this example, the function declaration function sayHello() is hoisted to the top of its scope, allowing you to call the function before its actual position in the code.
+
+#### 3. Hoisting with let and const:
+
+let and const declarations are also hoisted, but unlike var, they are not initialized with undefined until the point in the code where they are declared. This is known as the "temporal dead zone."
+
+```
+console.log(y);  // Throws a ReferenceError: y is not defined
+let y = 10;
+console.log(y);  // Outputs: 10
+```
+
+In this example, attempting to access the variable y before its declaration results in a ReferenceError.
+
+#### 4. Function Expressions:
+
+Function expressions, unlike function declarations, are not hoisted in the same way. The variable declaration is hoisted, but the assignment of the function expression is not.
+
+```
+sayHi();  // Throws a TypeError: sayHi is not a function
+var sayHi = function() {
+  console.log("Hi!");
+};
+```
+
+In this case, the variable sayHi is hoisted, but it's not initialized with a function until the actual assignment statement is encountered during runtime.
