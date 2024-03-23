@@ -212,4 +212,3 @@ var sayHi = function() {
 ```
 
 In this case, the variable sayHi is hoisted, but it's not initialized with a function until the actual assignment statement is encountered during runtime.
-Basic function of the event loop is to check if the call stack is empty or not, if is empty, then it checks the callback queue for all the asynchronous operations whose duration is complete, and then places those operations in the call stack and executes them one by one (sequentially).
