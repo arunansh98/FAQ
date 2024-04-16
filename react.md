@@ -191,10 +191,8 @@ Here are some key points about JSX:
 
 1. Embedding HTML in JavaScript: JSX allows developers to write HTML-like code directly within JavaScript. This helps in creating component-based UI structures in a more intuitive and readable way.
 
-`
-// JSX example
-const element = <h1>Hello, world!</h1>;
-`
+`// JSX example
+const element = <h1>Hello, world!</h1>;`
 
 2. Expressiveness: JSX supports embedding JavaScript expressions within curly braces {}. This allows dynamic content to be included within JSX elements.
 
@@ -226,13 +224,13 @@ const element = React.createElement('h1', null, 'Hello, world!');
 
 # What is React.createElement ?
 
-React.createElement() is a fundamental method in React used to create React elements. React elements represent 
+React.createElement() is a fundamental method in React used to create React elements. React elements represent
 UI components and are the building blocks of React applications.
-
 
 While developers typically use JSX to define React elements due to its readability and expressiveness, React.createElement() provides a low-level API for creating React elements programmatically. It's used internally by React to create and manage the virtual DOM representation of components.
 
 In JSX syntax, React.createElement() is implicitly called to create React elements. JSX tags get transpiled into calls to React.createElement() during the build process.
+
 ```
 const element = <div className="container">Hello, world!</div>;
 // Transpiles to:
@@ -258,10 +256,6 @@ Dispatch: Dispatch is a method provided by the Redux store to send actions to th
 Selectors: Selectors are functions used to extract specific pieces of data from the Redux store. They provide a way to query the store state in a consistent and reusable manner.
 
 Redux is commonly used with React to manage the state of complex applications. It helps in maintaining a predictable state management flow, making it easier to understand and debug application behavior. Additionally, Redux provides features like middleware and DevTools integration for advanced state management and debugging capabilities.
-
-
-
-
 
 # Write a custom hook to copy text to clipboard.
 
@@ -332,14 +326,14 @@ const MyComponent = () => {
 
 export default MyComponent;
 ```
-In this example, useClipboard hook handles the logic for copying text to the clipboard, while the MyComponent component demonstrates its usage. When the "Copy Text" button is clicked, the text entered in the input field will be copied to the clipboard, and a message will be displayed indicating that the text has been copied. The resetCopied function can be used to reset the copied state if needed.
 
+In this example, useClipboard hook handles the logic for copying text to the clipboard, while the MyComponent component demonstrates its usage. When the "Copy Text" button is clicked, the text entered in the input field will be copied to the clipboard, and a message will be displayed indicating that the text has been copied. The resetCopied function can be used to reset the copied state if needed.
 
 # How to validate Props in React?
 
-* We can use 'prop-types' package
+- We can use 'prop-types' package
 
-* Earlier, till React v15.5 this was there as part of React iteslf
+- Earlier, till React v15.5 this was there as part of React iteslf
 
 ```
 import PropTypes from "prop-types";
@@ -355,3 +349,7 @@ MyComponent.propTypes = {
 export default MyComponent;
 ```
 
+# What is prop drilling in React ?
+
+When state is shared/passed as an input to multiple nested child components one by one, it is known as prop drilling.
+One way to avoid drop drilling in React is to use context provider in which by default all child components wrapped under a context provider will have access to all the props without passing the props again and again from one child to another nested child and so on.
