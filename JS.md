@@ -15,7 +15,7 @@ Order of event propagation :-
 
 ### Capture Phase -> Target Phase -> Bubbling Phase
 
-Basically any event occurs, it propagates in this order, first in capturing phase, the event propagates from tyhe parent element towards the target element,triggering all the event listeners defined in the capturing phase of the same type(click), then it triggers the event listener of the target element, then in bubbling phase,the event propagates(bubbles) towards the parent element from the target element triggering all the event listeners defined in the bubbling phase of the same type(click).
+Basically any event occurs, it propagates in this order, first in capturing phase, the event propagates from the parent element towards the target element,triggering all the event listeners defined in the capturing phase of the same type(click), then it triggers the event listener of the target element, then in bubbling phase,the event propagates(bubbles) towards the parent element from the target element triggering all the event listeners defined in the bubbling phase of the same type(click).
 
 ## What is Event.stopPropagation() ?
 
