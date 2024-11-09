@@ -11,7 +11,11 @@
 
 example of bubbling :- Once you trigger the event, it will propagate up to the root, and it will trigger every single event handler which is associated with the same type. For example, if your button has a click event,during the bubbling phase, it will bubble up to the root, and trigger every click event along the way.
 
+Order of event propagation :-
+
 ### Capture Phase -> Target Phase -> Bubbling Phase
+
+Basically any event occurs, it propagates in this order, first in capturing phase, the event propagates from tyhe parent element towards the target element,triggering all the event listeners defined in the capturing phase of the same type(click), then it triggers the event listener of the target element, then in bubbling phase,the event propagates(bubbles) towards the parent element from the target element triggering all the event listeners defined in the bubbling phase of the same type(click).
 
 ## What is Event.stopPropagation() ?
 
