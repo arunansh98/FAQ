@@ -62,6 +62,10 @@ The main distinction between a framework and a library is that a framework inver
 It informs the developer of what they require. A library, however, does not.
 Instead, a programmer calls the library when and where he needs it.
 
+Framework provides built in tools to use the different resources to develop your web application(routing,state management,form handling). for ex:- Angular is a framework which has such in built tools.
+Whereas libraries are developed for handling a specific task and are not equipped with built in tools for other tasks.for ex:- React is a UI library which only handles the task for building resusable ui components.
+for other tasks libraries need to be called explicitly by the programmer wherever needed.(for ex:- Redux and React Router libraries need to be called for handling state management and routing).
+
 # How reduce function works in Javascript ?
 
 ```
@@ -247,3 +251,39 @@ MPA: May feel slower due to full page reloads but can have faster initial load t
 
 SPA: Supports a more modular and component-based development approach.
 MPA: Might involve a more traditional, page-centric development approach.
+
+## What are attributes in HTML ?
+
+Attributes in HTML provide additional information about an element. They modify the behavior or appearance of an HTML element and are always specified in the start tag. Attributes come in name-value pairs, such as name="value".
+
+Basic Rules:
+Attributes are written within the opening tag of an element.
+They are typically key-value pairs, where the key is the attribute name and the value is enclosed in quotes.
+Example of Common HTML Attributes:
+
+1. href attribute
+
+   `<a href="https://www.example.com">Visit Example</a>`
+
+   href specifies the URL the link points to.
+
+2. src attribute
+
+   `<img src="image.jpg" alt="A description of the image" />`
+
+   src provides the path to the image.
+   alt provides alternative text if the image cannot be displayed.
+
+3. type and placeholder attributes:
+
+   `<input type="text" placeholder="Enter your name" />`
+
+   type specifies the type of input (e.g., text, password, email).
+   placeholder displays a hint for what the user should input.
+
+4. id and class attributes:
+
+   `<div id="uniqueElement" class="container">Hello World</div>`
+
+   id provides a unique identifier for an element.
+   class assigns one or more class names for CSS styling or JavaScript manipulation.
