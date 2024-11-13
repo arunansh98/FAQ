@@ -216,3 +216,60 @@ var sayHi = function() {
 ```
 
 In this case, the variable sayHi is hoisted, but it's not initialized with a function until the actual assignment statement is encountered during runtime.
+
+## What is shallow copy and deep copy in Javascript ?
+
+Both copies aim to duplicate object or array in a different object/array. The difference is that in
+shallow copy, any changes made to the duplicate array, changes the original array also. Whereas, in
+deep copy, any changes made to either of the array are independent of one another.
+
+Example of shallow copy :-
+
+```
+let a = [1,2,3,4]
+let b = a; // shallow copy
+here if i change any index value of array b, it will array a also,
+b[0] = -1;
+console.log(b); // will print [-1,2,3,4]
+console.log(a); // will print [-1,2,3,4]
+```
+
+Example of deep copy :-
+
+```
+let a = [1,2,3,4]
+let b = JSON.parse(JSON.stringify(a)); // deep copy
+here if i change any index value of array b,array a will remain unchanged,
+b[0] = -1;
+console.log(b); // will print [-1,2,3,4]
+console.log(a); // will print [1,2,3,4]
+```
+
+Other ways of deep copy :-
+`let b = strcuturedClone(a)`
+
+Other ways of shallow copy :-
+
+Spread Operator :- `let b = [...a]`;
+
+Note :- Using spread operator will ensure that all the elements present at the 1st element are deep copied,
+but any element which is nested will be shallow copied.
+for example, below in case of nested, it will affect the original also:-
+
+```
+let a = [[0,1],2];
+let b = [...a]; // shallow copy
+b[0][0] = -1;
+console.log(b); // will print [[-1,1],2]
+console.log(a); // will print [[-1,1],2]
+```
+
+but if elements are present at first level only, then it will be a deep copy,
+
+```
+let a = [0,1,2];
+let b = [...a]; // shallow copy
+b[0] = -1;
+console.log(b); // will print [0,1,2]
+console.log(a); // will print [-1,1,2]
+```
