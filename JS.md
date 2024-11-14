@@ -252,24 +252,23 @@ Other ways of shallow copy :-
 
 Spread Operator :- `let b = [...a]`;
 
-Note :- Using spread operator will ensure that all the elements present at the 1st element are deep copied,
-but any element which is nested will be shallow copied.
-for example, below in case of nested, it will affect the original also:-
+Note :- Using spread operator will ensure that all the elements present at the 1st level are deep copied,
+but any element which is nested(2nd level and so on) will be shallow copied.
+for example, below in case of nested, it will affect the original also(but in the same array if you change
+elements at first level, they will be deep copied):-
 
 ```
 let a = [[0,1],2];
-let b = [...a]; // shallow copy
-b[0][0] = -1;
+let b = [...a];
+b[0][0] = -1; // shallow copy
 console.log(b); // will print [[-1,1],2]
 console.log(a); // will print [[-1,1],2]
 ```
 
-but if elements are present at first level only, then it will be a deep copy,
+but if elements are changed at first level only, then it will be a deep copy,
 
 ```
-let a = [0,1,2];
-let b = [...a]; // shallow copy
-b[0] = -1;
-console.log(b); // will print [0,1,2]
-console.log(a); // will print [-1,1,2]
+b[1] = 3; // deep copy
+console.log(b); // will print [[-1,1],3]
+console.log(a); // will print [[-1,1],2]
 ```
