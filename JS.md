@@ -228,7 +228,7 @@ Example of shallow copy :-
 ```
 let a = [1,2,3,4]
 let b = a; // shallow copy
-here if i change any index value of array b, it will array a also,
+here if i change any index value of array b, it will change array a also,
 b[0] = -1;
 console.log(b); // will print [-1,2,3,4]
 console.log(a); // will print [-1,2,3,4]
@@ -246,7 +246,7 @@ console.log(a); // will print [1,2,3,4]
 ```
 
 Other ways of deep copy :-
-`let b = strcuturedClone(a)`
+`let b = structuredClone(a)`
 
 Other ways of shallow copy :-
 
